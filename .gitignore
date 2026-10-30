@@ -1,0 +1,17 @@
+/vendor/
+.env
+
+/storage/logs/*
+/storage/receipts/*
+/storage/private/*
+
+!/storage/logs/.gitkeep
+!/storage/receipts/.gitkeep
+!/storage/private/.gitkeep
+
+/public/assets/uploads/
+
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
