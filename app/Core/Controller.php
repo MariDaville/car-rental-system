@@ -5,26 +5,44 @@ namespace App\Core;
 class Controller
 {
     /**
-     * Load and render a view.
-     *
-     * @param string $view
-     * @param array $data
+     * Render a view inside a shared layout.
      */
-    protected function render(string $view, array $data = []): void
-    {
+    protected function render(
+        string $view,
+        array $data = [],
+        string $layout = 'main'
+    ): void {
+
         $viewPath = BASE_PATH . '/resources/views/' . $view . '.php';
 
+        $layoutPath = BASE_PATH . '/resources/views/layouts/' . $layout . '.php';
+
+        // Verify that the requested view exists
         if (!file_exists($viewPath)) {
             throw new \RuntimeException(
                 "View not found: {$view}"
             );
         }
 
-        // Make data available to the view
+        // Verify that the requested layout exists
+        if (!file_exists($layoutPath)) {
+            throw new \RuntimeException(
+                "Layout not found: {$layout}"
+            );
+        }
+
+        // Make supplied data available to the view and layout
         extract($data, EXTR_SKIP);
 
-        // Render the view
+        // Capture the page-specific view output
+        ob_start();
+
         require $viewPath;
+
+        $content = ob_get_clean();
+
+        // Render the shared layout around the page content
+        require $layoutPath;
     }
 
     /**

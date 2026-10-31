@@ -1,0 +1,224 @@
+/* =================================
+   GLOBAL APPLICATION STYLES
+================================= */
+
+:root {
+    --primary: #172B4D;
+    --accent: #2563EB;
+    --background: #F5F7FA;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--background);
+    color: #263445;
+}
+
+/* =================================
+   NAVIGATION
+================================= */
+
+.navbar {
+    background: white;
+    padding: 18px 0;
+}
+
+.navbar-brand {
+    color: var(--primary);
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.navbar-brand span {
+    color: var(--accent);
+}
+
+.nav-link {
+    color: #39475A;
+    font-weight: 500;
+}
+
+.btn-primary-custom {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 11px 23px;
+    border-radius: 7px;
+}
+
+.btn-primary-custom:hover {
+    background: #1D4ED8;
+    color: white;
+}
+
+/* =================================
+   HERO SECTION
+================================= */
+
+.hero {
+    background: linear-gradient(
+        120deg,
+        #172B4D,
+        #263F67
+    );
+
+    color: white;
+    padding: 90px 0 130px;
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.7rem);
+    font-weight: 750;
+    line-height: 1.2;
+}
+
+.hero p {
+    color: #D5DEEC;
+    font-size: 17px;
+}
+
+.hero-icon {
+    font-size: 150px;
+    color: rgba(255,255,255,0.85);
+}
+
+/* =================================
+   VEHICLE SEARCH
+================================= */
+
+.search-box {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.10);
+    margin-top: -65px;
+    position: relative;
+    z-index: 2;
+}
+
+.form-label {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.form-control,
+.form-select {
+    padding: 12px;
+    border-color: #DEE3EA;
+}
+
+/* =================================
+   GENERAL SECTIONS
+================================= */
+
+.section-padding {
+    padding: 75px 0;
+}
+
+.section-heading {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.section-description {
+    color: #718096;
+}
+
+/* =================================
+   VEHICLE CARDS
+================================= */
+
+.vehicle-card {
+    background: white;
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.vehicle-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.vehicle-image {
+    height: 190px;
+    background: #E9EFF8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vehicle-image i {
+    font-size: 85px;
+    color: var(--primary);
+}
+
+.vehicle-price {
+    color: var(--accent);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.vehicle-specs {
+    color: #718096;
+    font-size: 13px;
+}
+
+/* =================================
+   FEATURES
+================================= */
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #E7EFFF;
+    color: var(--accent);
+    border-radius: 12px;
+    font-size: 25px;
+    margin-bottom: 18px;
+}
+
+/* =================================
+   FOOTER
+================================= */
+
+footer {
+    background: var(--primary);
+    color: white;
+    padding: 55px 0 20px;
+}
+
+footer a {
+    color: #D5DEEC;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: white;
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        padding: 65px 0 100px;
+        text-align: center;
+    }
+
+    .hero-icon {
+        font-size: 90px;
+        margin-top: 30px;
+    }
+
+    .search-box {
+        padding: 20px;
+    }
+
+}
