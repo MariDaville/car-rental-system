@@ -10,6 +10,8 @@
 !/storage/private/.gitkeep
 
 /public/assets/uploads/
+# Uploaded vehicle photographs
+/public/assets/images/vehicles/
 
 .vscode/
 .idea/

@@ -39,7 +39,7 @@
                     <a class="nav-link" href="/contact">Contact</a>
                 </li>
 
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="/login">Login</a>
                 </li>
 
@@ -47,7 +47,38 @@
                     <a href="/register" class="btn btn-primary-custom">
                         Get Started
                     </a>
-                </li>
+                </li> -->
+                <?php if (!empty($_SESSION['user_id'])): ?>
+
+    <span class="nav-link">
+        Welcome, <?= htmlspecialchars($_SESSION['email']) ?>
+    </span>
+
+    <form method="POST" action="/logout" class="d-inline">
+
+        <input
+            type="hidden"
+            name="csrf_token"
+            value="<?= htmlspecialchars($_SESSION['csrf_token']) ?>"
+        >
+
+        <button type="submit" class="btn btn-outline-danger">
+            Logout
+        </button>
+
+    </form>
+
+<?php else: ?>
+
+    <a href="/login" class="nav-link">
+        Login
+    </a>
+
+    <a href="/register" class="btn btn-primary">
+        Get Started
+    </a>
+
+<?php endif; ?>
 
             </ul>
 
